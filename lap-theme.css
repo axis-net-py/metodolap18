@@ -1,0 +1,176 @@
+/* LAP Design System — Certificate Blue Edition
+   Approved primary blue: #173F78
+   Supporting blue: #123563 / #24518D
+   Certificate gold: #D6B568
+*/
+
+:root {
+  --navy: #173F78;
+  --navy-deep: #123563;
+  --navy-light: #24518D;
+  --gold: #D6B568;
+  --gold-hover: #C7A451;
+  --gold-light: rgba(214,181,104,.12);
+  --gold-border: rgba(214,181,104,.30);
+  --gold-border-md: rgba(214,181,104,.55);
+  --offwhite: #173F78;
+  --ivory: #1A447A;
+  --white: #FFFFFF;
+  --text-dark: #FFFFFF;
+  --text-muted: #DCE4EF;
+  --text-light: #B8C7DB;
+  --shadow: 0 14px 32px rgba(7,25,51,.18);
+  --shadow-lg: 0 24px 52px rgba(7,25,51,.28);
+}
+
+html { background: var(--navy-deep); }
+body {
+  background:
+    radial-gradient(circle at 78% 4%, rgba(255,255,255,.055), transparent 26rem),
+    linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 32%, var(--navy) 72%, var(--navy-deep) 100%);
+  color: var(--white);
+}
+
+body::before { opacity: .16; mix-blend-mode: soft-light; }
+
+h1,h2,h3,h4,.font-display { color: var(--white); }
+.serif-italic,.content-description,.section-subtitle,.gauge-desc,.method-card-desc,.day-subtitle,.objective-card p,.info-detail,.stat-lbl,.inc-desc,.policy-card ul,.examples-card ul { color: var(--text-muted); }
+
+header {
+  background: rgba(18,53,99,.94);
+  border-bottom-color: var(--gold-border);
+  box-shadow: 0 8px 30px rgba(4,19,43,.12);
+}
+.nav-links { background: var(--navy); }
+
+/* Certificate-inspired lateral ribbons: pure CSS, no generated imagery. */
+.hero,
+.speaker-section,
+.method-section,
+.program-section,
+.info-section,
+.value-section,
+.final-cta,
+.cohort-cta-section,
+.testimonials-section,
+.content-section,
+.video-section,
+.cta-band { position: relative; overflow: hidden; isolation: isolate; }
+
+.hero::before,
+.speaker-section::after,
+.method-section::before,
+.info-section::after,
+.value-section::before,
+.final-cta::before {
+  content: "";
+  position: absolute;
+  width: clamp(230px, 28vw, 470px);
+  height: clamp(520px, 72vw, 980px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .95;
+  background:
+    linear-gradient(90deg, transparent 0 62%, rgba(10,22,37,.82) 62% 67%, transparent 67%),
+    linear-gradient(90deg, transparent 0 70%, var(--gold) 70% 73%, #F4EADF 73% 79%, transparent 79%);
+}
+.hero::before,.method-section::before,.value-section::before,.final-cta::before { right: -17%; top: -28%; transform: rotate(-15deg); }
+.speaker-section::after,.info-section::after { left: -18%; bottom: -42%; transform: rotate(165deg); }
+
+.hero > *,
+.speaker-section > *,
+.method-section > *,
+.program-section > *,
+.info-section > *,
+.value-section > *,
+.final-cta > *,
+.content-section > *,
+.video-section > *,
+.cta-band > *,
+.cohort-cta-section > *,
+.testimonials-section > * { position: relative; z-index: 2; }
+
+/* Hero becomes an institutional blue canvas rather than a building photo. */
+.hero {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(56,103,159,.46), transparent 44%),
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 46%, var(--navy-light) 100%);
+}
+.hero::after {
+  height: 1px;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 6%, var(--gold) 30%, var(--gold) 70%, transparent 94%);
+}
+.hero p,.hero-meta { color: rgba(255,255,255,.86); }
+.countdown-item {
+  background: rgba(18,53,99,.68);
+  border-color: var(--gold-border-md);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* Blue-first section rhythm. */
+.content-section,
+.program-section,
+.value-section { background: linear-gradient(180deg, var(--navy) 0%, #19417A 100%); }
+.method-section,
+.info-section,
+.testimonials-section {
+  background: linear-gradient(180deg, #1C477F 0%, var(--navy) 100%) !important;
+  border-color: var(--gold-border);
+}
+.speaker-section,.video-section,.cta-band,.final-cta,.cohort-cta-section {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 58%, var(--navy-light) 100%) !important;
+  border-color: var(--gold);
+}
+
+/* Cards become premium blue glass; white/ivory reserved for reading surfaces. */
+.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp {
+  background: rgba(13,48,91,.68);
+  border-color: var(--gold-border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+.gauge-card:hover,.method-card:hover,.info-card:hover { border-color: var(--gold); box-shadow: var(--shadow-lg); }
+.gauge-title,.method-card-title,.day-title,.obj-title,.info-value,.inc-title,.policy-card h4,.examples-card h4,.quote-text { color: var(--white); }
+.objective-card { background: linear-gradient(135deg, rgba(214,181,104,.13), rgba(255,255,255,.035)); border-color: var(--gold-border); }
+.topics-list li { background: rgba(255,255,255,.06); color: #F5F8FC; }
+.topics-list li:hover { background: rgba(214,181,104,.13); }
+.progress-bar-track { background: rgba(255,255,255,.12); }
+
+.pricing-card {
+  background: linear-gradient(150deg, var(--navy-deep), var(--navy-light));
+  border-color: var(--gold);
+}
+.table-container-lp thead tr { background: var(--navy-deep); }
+.table-container-lp tbody tr { border-bottom-color: rgba(255,255,255,.08); }
+.table-container-lp tbody tr.highlighted { background: rgba(214,181,104,.12); }
+.table-container-lp td,
+.table-container-lp td[style*="color: var(--navy)"],
+.policy-card li[style*="color: var(--navy)"],
+.examples-card li[style*="color: var(--navy)"] { color: var(--text-muted) !important; }
+
+.btn-gold { background: linear-gradient(135deg,#E2C77E,var(--gold)); color: #123563; }
+.btn-gold:hover { background: #E5CD8C; color: #123563; }
+.btn-navy { background: rgba(18,53,99,.78); color: #fff; border-color: var(--gold); }
+.btn-navy:hover { background: var(--gold); color: var(--navy-deep); }
+.btn-outline { color: #fff; border-color: var(--gold-border-md); }
+.btn-outline:hover { background: rgba(255,255,255,.07); border-color: var(--gold); }
+
+footer { background: #0E2D56; border-top-color: var(--gold-border); }
+
+@media (max-width: 768px) {
+  .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before {
+    width: 210px;
+    height: 560px;
+    opacity: .72;
+  }
+  .hero::before,.method-section::before,.value-section::before,.final-cta::before { right: -135px; top: -95px; }
+  .speaker-section::after,.info-section::after { left: -145px; bottom: -180px; }
+  .hero { background: linear-gradient(155deg,var(--navy-deep),var(--navy) 58%,var(--navy-light)); }
+  .hero-content { max-width: 620px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
