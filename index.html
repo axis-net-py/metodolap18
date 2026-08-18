@@ -1539,7 +1539,7 @@
           <span><i class="fas fa-map-marker-alt"></i> Saltos del Guairá, Paraguay</span>
         </div>
         <div class="countdown" id="course-countdown" aria-label="Cuenta regresiva para el inicio del curso" aria-live="polite">
-          <div class="countdown-item"><span class="countdown-value" id="countdown-days">000</span><span class="countdown-label">Días</span></div>
+          <div class="countdown-item"><span class="countdown-value" id="countdown-days">0</span><span class="countdown-label">Días</span></div>
           <div class="countdown-item"><span class="countdown-value" id="countdown-hours">00</span><span class="countdown-label">Horas</span></div>
           <div class="countdown-item"><span class="countdown-value" id="countdown-minutes">00</span><span class="countdown-label">Minutos</span></div>
           <div class="countdown-item"><span class="countdown-value" id="countdown-seconds">00</span><span class="countdown-label">Segundos</span></div>
@@ -2062,7 +2062,7 @@
       const minutes = Math.floor((remaining % 3600000) / 60000);
       const seconds = Math.floor((remaining % 60000) / 1000);
 
-      document.getElementById('countdown-days').textContent = String(days).padStart(3, '0');
+      document.getElementById('countdown-days').textContent = String(days);
       document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
       document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
       document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
@@ -2148,3 +2148,4 @@
   </script>
 </body>
 </html>
+
