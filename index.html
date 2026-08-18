@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LAP — Liderança em Alta Performance | Jocelaine Rufatto</title>
-  <meta name="description" content="Inmersión presencial intensiva de Liderança em Alta Performance (LAP) en San Alberto, Paraguay. Desarrolle habilidades prácticas, domine el perfil DISC e impulse los resultados de su equipo." />
-  <meta property="og:title" content="LAP — Liderança em Alta Performance" />
-  <meta property="og:description" content="Inmersión presencial intensiva en San Alberto, Paraguay con Jocelaine Rufatto." />
+  <title>Método LAP 18 — Liderança em Alta Performance | Saltos del Guairá</title>
+  <meta name="description" content="18ª edición del Método LAP: inmersión presencial de Liderança em Alta Performance los días 15, 16 y 17 de septiembre de 2026 en Saltos del Guairá, Canindeyú, Paraguay." />
+  <meta name="keywords" content="Método LAP, liderazgo, alta performance, DISC, Saltos del Guairá, Canindeyú, Paraguay, Jocelaine Rufatto" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://metodolap18.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_PY" />
+  <meta property="og:title" content="Método LAP 18 — Liderança em Alta Performance" />
+  <meta property="og:description" content="15, 16 y 17 de septiembre de 2026 en el Quincho Moko'i Yvoty, Saltos del Guairá, Paraguay." />
+  <meta property="og:url" content="https://metodolap18.vercel.app/" />
+  <meta property="og:image" content="https://metodolap18.vercel.app/lap_video_poster.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Método LAP 18 — Liderança em Alta Performance" />
+  <meta name="twitter:description" content="15, 16 y 17 de septiembre de 2026 en Saltos del Guairá, Canindeyú, Paraguay." />
+  <meta name="twitter:image" content="https://metodolap18.vercel.app/lap_video_poster.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationEvent",
+    "name": "Método LAP 18 — Liderança em Alta Performance",
+    "description": "Inmersión presencial intensiva de liderazgo, perfil DISC, comunicación e inteligencia emocional.",
+    "startDate": "2026-09-15T19:00:00-03:00",
+    "endDate": "2026-09-17T23:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Quincho Moko'i Yvoty",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Av. Bernardino Caballero, Barrio Canindeyú",
+        "addressLocality": "Saltos del Guairá",
+        "addressRegion": "Canindeyú",
+        "addressCountry": "PY"
+      }
+    },
+    "organizer": { "@type": "Person", "name": "Jocelaine Rufatto" },
+    "url": "https://metodolap18.vercel.app/"
+  }
+  </script>
   <meta property="og:image" content="logo.png" />
   <link rel="icon" href="logo.png" />
   
@@ -396,6 +432,49 @@
 
     .hero-meta i {
       color: var(--gold);
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(72px, 1fr));
+      gap: 12px;
+      max-width: 500px;
+      margin: 32px auto 0;
+    }
+
+    .countdown-item {
+      padding: 14px 8px 12px;
+      background: rgba(10, 25, 47, 0.72);
+      border: 1px solid var(--gold-border-md);
+      border-radius: var(--r-sm);
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-value {
+      display: block;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.45rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .countdown-finished {
+      grid-column: 1 / -1;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     /* ===== THE SPEAKER (A MENTORA) ===== */
@@ -1200,6 +1279,17 @@
       .container {
         padding: 0 1.25rem;
       }
+      .countdown {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+      }
+      .countdown-item {
+        padding: 12px 4px 10px;
+      }
+      .countdown-label {
+        font-size: 7px;
+        letter-spacing: 0.8px;
+      }
       .hero-cta-group .btn {
         width: 100%;
       }
@@ -1423,7 +1513,7 @@
           <li><a href="#evento">Detalles</a></li>
           <li><a href="#valor">Inversión</a></li>
           <li>
-            <a href="https://form.jotform.com/261595450520051" target="_blank" class="btn btn-gold nav-cta">Inscribirse</a>
+            <a href="#" class="btn btn-gold nav-cta click-wa-cta">Inscribirse</a>
           </li>
         </ul>
       </nav>
@@ -1438,15 +1528,21 @@
         <h1>Liderança em <br /><span>Alta Performance</span></h1>
         <p>La arquitectura definitiva de gestión basada en neurociencia y soberanía comportamental para líderes que buscan el topo.</p>
         <div class="hero-cta-group">
-          <a href="https://form.jotform.com/261595450520051" target="_blank" class="btn btn-gold">
+          <a href="#" class="btn btn-gold click-wa-cta">
             Quiero Inscribirme
           </a>
           <a href="#programa" class="btn btn-navy">Ver Programa</a>
         </div>
         <div class="hero-meta">
-          <span><i class="fas fa-calendar-alt"></i> 17, 18 y 19 de Junio, 2026</span>
+          <span><i class="fas fa-calendar-alt"></i> 15, 16 y 17 de Septiembre, 2026</span>
           <span><i class="fas fa-clock"></i> 19:00 a 23:00 hs</span>
-          <span><i class="fas fa-map-marker-alt"></i> San Alberto, Paraguay</span>
+          <span><i class="fas fa-map-marker-alt"></i> Saltos del Guairá, Paraguay</span>
+        </div>
+        <div class="countdown" id="course-countdown" aria-label="Cuenta regresiva para el inicio del curso" aria-live="polite">
+          <div class="countdown-item"><span class="countdown-value" id="countdown-days">000</span><span class="countdown-label">Días</span></div>
+          <div class="countdown-item"><span class="countdown-value" id="countdown-hours">00</span><span class="countdown-label">Horas</span></div>
+          <div class="countdown-item"><span class="countdown-value" id="countdown-minutes">00</span><span class="countdown-label">Minutos</span></div>
+          <div class="countdown-item"><span class="countdown-value" id="countdown-seconds">00</span><span class="countdown-label">Segundos</span></div>
         </div>
       </div>
     </div>
@@ -1474,7 +1570,7 @@
     <div class="container">
       <div class="speaker-flex">
         <div class="speaker-image-container reveal-left">
-          <img src="https://metodolap.vercel.app/jocelaine.png" alt="Jocelaine Rufatto" />
+          <img src="jocelaine.png" alt="Jocelaine Rufatto" />
         </div>
         <div class="speaker-content reveal-right">
           <span class="speaker-tag">A Mentora</span>
@@ -1485,7 +1581,7 @@
           </p>
           <ul class="speaker-list">
             <li><i class="fas fa-check-circle"></i> +20 Anos de Indústria</li>
-            <li><i class="fas fa-check-circle"></i> 16 Ediciones LAP</li>
+            <li><i class="fas fa-check-circle"></i> 17 Ediciones LAP realizadas</li>
             <li><i class="fas fa-check-circle"></i> Analista DISC Master</li>
             <li><i class="fas fa-check-circle"></i> Mentora de +1.000 Líderes</li>
           </ul>
@@ -1509,7 +1605,7 @@
           </p>
         </div>
         <div class="challenge-img-container reveal-right">
-          <img src="https://metodolap.vercel.app/secao2.jpeg" alt="Liderazgo Estratégico" />
+          <img src="secao2.jpeg" alt="Liderazgo Estratégico" />
         </div>
       </div>
     </div>
@@ -1655,7 +1751,7 @@
         <h2>¿Listo para liderar con <span>Alta Performance</span>?</h2>
         <p class="cta-desc">Las vacantes son limitadas por edición para garantizar el nivel de interacción y networking del grupo.</p>
         <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-          <a href="https://form.jotform.com/261595450520051" target="_blank" class="btn btn-gold" style="font-size: 14px; padding: 16px 36px;">
+          <a href="#" class="btn btn-gold click-wa-cta" style="font-size: 14px; padding: 16px 36px;">
             Iniciar Pre-Inscripción
           </a>
         </div>
@@ -1674,8 +1770,8 @@
         <div class="info-card">
           <div class="info-icon">📅</div>
           <div class="info-label">Fecha</div>
-          <div class="info-value">17, 18 y 19</div>
-          <p class="info-detail">de Junio de 2026</p>
+          <div class="info-value">15, 16 y 17</div>
+          <p class="info-detail">de Septiembre de 2026</p>
         </div>
         <div class="info-card">
           <div class="info-icon">🕐</div>
@@ -1686,8 +1782,8 @@
         <div class="info-card">
           <div class="info-icon">📍</div>
           <div class="info-label">Ubicación</div>
-          <div class="info-value">O Costelão</div>
-          <p class="info-detail">San Alberto, Paraguay</p>
+          <div class="info-value">Quincho Moko'i Yvoty</div>
+          <p class="info-detail">Calle Av. Bernardino Caballero, Barrio Canindeyú<br />Saltos del Guairá, Canindeyú, Paraguay</p>
         </div>
       </div>
       <div class="info-stats-row reveal delay-1">
@@ -1878,7 +1974,7 @@
     <div class="container" style="position: relative; z-index: 10;">
       <div class="reveal">
         <span class="tagline-gold" style="color: var(--gold); border: 1px solid var(--gold-border-md); padding: 4px 16px; border-radius: 30px; background: rgba(212, 175, 55, 0.05); margin-bottom: 20px;">¡Inscripciones Abiertas!</span>
-        <h2 class="section-title" style="color: var(--white); margin-top: 20px; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 24px;">Nueva Edición <span>Nova Turma</span></h2>
+        <h2 class="section-title" style="color: var(--white); margin-top: 20px; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 24px;">18ª Edición <span>Nueva Turma</span></h2>
         <p style="color: rgba(255, 255, 255, 0.85); font-size: 16px; max-width: 650px; margin: 0 auto 32px; line-height: 1.8;">
           Las plazas para el entrenamiento de Liderança em Alta Performance son estrictamente limitadas a <strong>solo 25 participantes</strong> por edición para garantizar el máximo networking y acompañamiento personalizado.
         </p>
@@ -1894,7 +1990,7 @@
         </div>
 
         <div style="margin-bottom: 28px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-          <a href="https://form.jotform.com/261595450520051" target="_blank" class="btn btn-gold" style="font-size: 15px; padding: 18px 44px; display: inline-flex; align-items: center; gap: 14px;">
+          <a href="#" class="btn btn-gold click-wa-cta" style="font-size: 15px; padding: 18px 44px; display: inline-flex; align-items: center; gap: 14px;">
             Asegurar Cupo en la Nueva Turma
           </a>
         </div>
@@ -1916,11 +2012,11 @@
         <h2 class="final-title">Asegure su <span>Participación</span></h2>
         <p class="final-desc">Asuma el control estratégico de su negocio y lidere con soberanía conductual.</p>
         <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
-          <a href="https://form.jotform.com/261595450520051" target="_blank" class="btn btn-gold" style="font-size: 14px; padding: 16px 36px;">
-            Rellenar Formulario de Inscripción
+          <a href="#" class="btn btn-gold click-wa-cta" style="font-size: 14px; padding: 16px 36px;">
+            Solicitar Inscripción por WhatsApp
           </a>
         </div>
-        <p class="final-cta-meta">📅 17, 18 y 19 de Junio, 2026 · 📍 San Alberto, Paraguay</p>
+        <p class="final-cta-meta">📅 15, 16 y 17 de Septiembre, 2026 · 📍 Quincho Moko'i Yvoty, Saltos del Guairá</p>
       </div>
     </div>
   </section>
@@ -1948,7 +2044,29 @@
   <script>
     // ===== CONFIGURATIONS =====
     const CONTACT_PHONE = "595987244284"; // Paraguay coordinator WhatsApp number
-    const DEFAULT_MSG = "Hola! Tengo algunas dudas sobre el entrenamiento presencial de Liderança em Alta Performance (LAP) en San Alberto.";
+    const DEFAULT_MSG = "¡Hola! Quiero información e inscribirme en la 18ª edición del Método LAP, los días 15, 16 y 17 de septiembre de 2026 en Saltos del Guairá.";
+    const COURSE_START = new Date("2026-09-15T19:00:00-03:00");
+
+    function updateCountdown() {
+      const countdown = document.getElementById('course-countdown');
+      const remaining = COURSE_START.getTime() - Date.now();
+      if (!countdown) return;
+
+      if (remaining <= 0) {
+        countdown.innerHTML = '<div class="countdown-finished">¡El Método LAP 18 ha comenzado!</div>';
+        return;
+      }
+
+      const days = Math.floor(remaining / 86400000);
+      const hours = Math.floor((remaining % 86400000) / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
+      const seconds = Math.floor((remaining % 60000) / 1000);
+
+      document.getElementById('countdown-days').textContent = String(days).padStart(3, '0');
+      document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+    }
 
     // Smooth reveal animations on scroll
     function initScrollReveal() {
@@ -2019,6 +2137,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       initScrollReveal();
       document.getElementById('current-year').textContent = new Date().getFullYear();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
       
       // Safety timeout to trigger reveal on landing
       setTimeout(() => {
