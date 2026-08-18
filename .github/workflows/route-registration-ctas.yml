@@ -1,0 +1,93 @@
+name: Route registration CTAs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/route-registration-ctas.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-ctas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Route registration buttons to the form
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          form_url = 'https://axis-inscricoes.vercel.app/lap18'
+          labels = [
+              'Inscribirse',
+              'Quiero Inscribirme',
+              'Iniciar Pre-Inscripción',
+              'Asegurar Cupo en la Nueva Turma',
+          ]
+
+          for label in labels:
+              pattern = re.compile(
+                  r'<a\s+href="#"\s+class="(?P<class>[^"]*\bclick-wa-cta\b[^"]*)"(?P<attrs>[^>]*)>\s*'
+                  + re.escape(label)
+                  + r'\s*</a>',
+                  re.MULTILINE,
+              )
+
+              def replace(match):
+                  classes = ' '.join(
+                      c for c in match.group('class').split()
+                      if c != 'click-wa-cta'
+                  )
+                  return (
+                      f'<a href="{form_url}" class="{classes}"{match.group("attrs")}>'
+                      f'\n            {label}\n          </a>'
+                  )
+
+              html, count = pattern.subn(replace, html, count=1)
+              if count != 1:
+                  raise SystemExit(f'Expected exactly one CTA named {label!r}, found {count}')
+
+          # Safety checks: support CTAs must remain WhatsApp-driven.
+          if 'Solicitar Inscripción por WhatsApp' not in html or 'whatsapp-float click-wa-cta' not in html:
+              raise SystemExit('WhatsApp support CTA safety check failed')
+
+          path.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Verify CTA routing
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html = Path('index.html').read_text(encoding='utf-8')
+          form_url = 'https://axis-inscricoes.vercel.app/lap18'
+          for label in ['Inscribirse','Quiero Inscribirme','Iniciar Pre-Inscripción','Asegurar Cupo en la Nueva Turma']:
+              if form_url not in html:
+                  raise SystemExit('Form URL missing')
+              pos = html.find(label)
+              start = html.rfind('<a', 0, pos)
+              end = html.find('</a>', pos)
+              anchor = html[start:end]
+              assert form_url in anchor, (label, anchor)
+              assert 'click-wa-cta' not in anchor, (label, anchor)
+          assert 'Solicitar Inscripción por WhatsApp' in html
+          assert 'whatsapp-float click-wa-cta' in html
+          print('CTA routing verified')
+          PY
+
+      - name: Commit landing update
+        run: |
+          if git diff --quiet -- index.html; then
+            echo 'No changes needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'fix: send registration CTAs to LAP 18 form'
+          git push
