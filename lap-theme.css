@@ -56,20 +56,62 @@ header { background:rgba(10,16,32,.97) !important; border-bottom-color:var(--lap
 .btn-navy:hover,.btn-outline:hover { background:var(--lap-gold) !important; color:#0A1020 !important; }
 footer { background:#070C18 !important; border-top-color:var(--lap-border-soft) !important; color:var(--lap-text-soft) !important; }
 
-/* Hero must stay midnight all the way to the next section. The legacy inline
-   stylesheet adds a 150px fade to --offwhite; neutralize it explicitly. */
+/* Cinematic midnight atmosphere: depth without washing the LAP palette. */
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(33,51,86,.56) 0%, rgba(14,26,51,.28) 33%, transparent 64%),
+    radial-gradient(circle at 16% 52%, rgba(201,162,75,.055) 0%, transparent 28%),
+    radial-gradient(circle at 84% 48%, rgba(201,162,75,.045) 0%, transparent 30%),
+    linear-gradient(180deg,#070C18 0%,#0A1020 38%,#0D1830 72%,#0A1020 100%) !important;
+  box-shadow: inset 0 -36px 80px rgba(0,0,0,.22) !important;
+}
 .hero::after {
   content:'' !important;
   position:absolute !important;
   left:0 !important;
   right:0 !important;
   bottom:0 !important;
-  height:72px !important;
-  background:linear-gradient(to bottom,transparent 0%,rgba(8,14,28,.18) 45%,#0A1020 100%) !important;
+  height:150px !important;
+  background:
+    linear-gradient(180deg,transparent 0%,rgba(10,16,32,.14) 34%,rgba(10,16,32,.72) 76%,#0A1020 100%) !important;
   pointer-events:none !important;
   z-index:1 !important;
 }
-.video-section { border-top:1px solid rgba(201,162,75,.16) !important; }
+.hero-content { filter:drop-shadow(0 14px 34px rgba(0,0,0,.16)); }
+.countdown-item {
+  background:linear-gradient(145deg,rgba(13,21,40,.88),rgba(19,31,57,.82)) !important;
+  border-color:rgba(201,162,75,.50) !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.07) !important;
+}
+.video-section {
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(31,48,80,.48) 0%,rgba(14,26,51,.18) 34%,transparent 66%),
+    linear-gradient(180deg,#0A1020 0%,#0B1428 46%,#0A1020 100%) !important;
+  border-top:1px solid rgba(201,162,75,.18) !important;
+  box-shadow:inset 0 34px 70px rgba(0,0,0,.13) !important;
+}
+.content-section,.program-section,.value-section {
+  background:
+    radial-gradient(circle at 78% 24%,rgba(33,50,83,.26),transparent 32rem),
+    linear-gradient(180deg,#0A1020 0%,#0E1A33 52%,#0A1020 100%) !important;
+}
+.method-section,.info-section,.testimonials-section {
+  background:
+    radial-gradient(circle at 20% 28%,rgba(201,162,75,.035),transparent 26rem),
+    linear-gradient(180deg,#0E182E 0%,#101A30 48%,#0A1020 100%) !important;
+}
+.speaker-section,.cta-band,.final-cta,.cohort-cta-section {
+  background:
+    radial-gradient(ellipse at 70% 30%,rgba(31,49,82,.42),transparent 42rem),
+    linear-gradient(135deg,#080E1C 0%,#0A1020 50%,#0E1A33 100%) !important;
+}
+.speaker-section,.method-section,.program-section,.info-section,.value-section,.testimonials-section,.cta-band,.final-cta,.cohort-cta-section {
+  border-top:1px solid rgba(201,162,75,.09) !important;
+  box-shadow:inset 0 28px 58px rgba(0,0,0,.07) !important;
+}
+.quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp,.pricing-card {
+  box-shadow:0 22px 52px rgba(0,0,0,.29),inset 0 1px 0 rgba(255,255,255,.06),inset 0 -1px 0 rgba(201,162,75,.04) !important;
+}
 
-@media (max-width:768px) { .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before { width:210px; height:560px; opacity:.24; } .hero::before,.method-section::before,.value-section::before,.final-cta::before { right:-150px; top:-105px; } .speaker-section::after,.info-section::after { left:-155px; bottom:-190px; } .content-description,.section-subtitle,.speaker-description,.speaker-role,.day-subtitle,.gauge-desc,.method-card-desc,.info-detail,.inc-desc,.quote-text { color:#EDF0F5 !important; } .quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp { backdrop-filter:none !important; background:rgba(10,16,32,.97) !important; } }
+@media (max-width:768px) { .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before { width:210px; height:560px; opacity:.24; } .hero::before,.method-section::before,.value-section::before,.final-cta::before { right:-150px; top:-105px; } .speaker-section::after,.info-section::after { left:-155px; bottom:-190px; } .content-description,.section-subtitle,.speaker-description,.speaker-role,.day-subtitle,.gauge-desc,.method-card-desc,.info-detail,.inc-desc,.quote-text { color:#EDF0F5 !important; } .quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp { backdrop-filter:none !important; background:rgba(10,16,32,.97) !important; } .hero::after { height:108px !important; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
