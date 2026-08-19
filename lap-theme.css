@@ -1,232 +1,59 @@
-/* LAP Design System — Certificate Blue Edition
-   Approved blue: #173F78 | Deep: #123563 | Light: #24518D
-   Gold: #D6B568
-
-   IMPORTANT: this stylesheet is loaded before legacy inline CSS in index.html.
-   LAP-prefixed tokens + !important are intentional so the old light-theme
-   variables cannot wash out the blue edition.
+/* LAP Design System — Deep Midnight Edition
+   Canonical dark background: #0A1020 -> #0E1A33
+   Supporting navy: #101A30
+   Gold: #C9A24B
 */
-
 :root {
-  --lap-blue: #173F78;
-  --lap-blue-deep: #123563;
-  --lap-blue-light: #24518D;
-  --lap-gold: #D6B568;
-  --lap-gold-bright: #E6C978;
+  --lap-blue: #0E1A33;
+  --lap-blue-deep: #0A1020;
+  --lap-blue-light: #101A30;
+  --lap-gold: #C9A24B;
+  --lap-gold-bright: #D8B762;
   --lap-white: #FFFFFF;
-  --lap-text: #F4F7FB;
-  --lap-text-secondary: #DEE7F2;
-  --lap-text-soft: #C9D6E6;
-  --lap-border: rgba(214,181,104,.48);
-  --lap-border-soft: rgba(214,181,104,.28);
-  --lap-shadow: 0 20px 48px rgba(4,18,40,.30);
+  --lap-text: #F5F7FB;
+  --lap-text-secondary: #DDE3ED;
+  --lap-text-soft: #BAC4D3;
+  --lap-border: rgba(201,162,75,.48);
+  --lap-border-soft: rgba(201,162,75,.25);
+  --lap-shadow: 0 20px 48px rgba(0,0,0,.34);
 }
-
-html { background: var(--lap-blue-deep) !important; }
+html { background:#0A1020 !important; }
 body {
-  background:
-    radial-gradient(circle at 76% 4%, rgba(255,255,255,.08), transparent 28rem),
-    linear-gradient(180deg, #102F59 0%, var(--lap-blue) 32%, #1C477F 70%, var(--lap-blue-deep) 100%) !important;
-  color: var(--lap-text) !important;
+  background:linear-gradient(180deg,#0A1020 0%,#0E1A33 48%,#0A1020 100%) !important;
+  color:var(--lap-text) !important;
 }
-body::before { opacity: .09 !important; mix-blend-mode: soft-light; }
-
-header {
-  background: rgba(13,43,82,.97) !important;
-  border-bottom-color: var(--lap-border) !important;
-  box-shadow: 0 8px 30px rgba(4,18,40,.25) !important;
-}
-.nav-links { background: var(--lap-blue-deep) !important; }
-.nav-links a { color: #F7FAFD !important; opacity: 1 !important; }
-.nav-links a:hover { color: var(--lap-gold-bright) !important; }
-
-/* Every major block is treated as part of the blue LAP canvas. */
-.hero,
-.speaker-section,
-.method-section,
-.program-section,
-.info-section,
-.value-section,
-.final-cta,
-.cohort-cta-section,
-.testimonials-section,
-.content-section,
-.video-section,
-.cta-band {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  color: var(--lap-text) !important;
-}
-
-.hero,
-.speaker-section,
-.video-section,
-.cta-band,
-.final-cta,
-.cohort-cta-section {
-  background:
-    radial-gradient(circle at 85% 18%, rgba(60,112,173,.28), transparent 34rem),
-    linear-gradient(135deg, #102F59 0%, var(--lap-blue) 54%, #1F4D86 100%) !important;
-}
-
-.content-section,
-.program-section,
-.value-section {
-  background: linear-gradient(180deg, var(--lap-blue) 0%, #1D477F 100%) !important;
-}
-
-.method-section,
-.info-section,
-.testimonials-section {
-  background: linear-gradient(180deg, #214F88 0%, #173F78 100%) !important;
-  border-color: var(--lap-border-soft) !important;
-}
-
-/* Certificate-inspired side ribbons, kept subtle enough not to compete with copy. */
-.hero::before,
-.speaker-section::after,
-.method-section::before,
-.info-section::after,
-.value-section::before,
-.final-cta::before {
-  content: "";
-  position: absolute;
-  width: clamp(230px,28vw,470px);
-  height: clamp(520px,72vw,980px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: .52;
-  background:
-    linear-gradient(90deg,transparent 0 62%,rgba(8,27,54,.70) 62% 67%,transparent 67%),
-    linear-gradient(90deg,transparent 0 70%,var(--lap-gold) 70% 73%,#F4EADF 73% 79%,transparent 79%);
-}
+body::before { opacity:.08 !important; mix-blend-mode:soft-light; }
+header { background:rgba(10,16,32,.97) !important; border-bottom-color:var(--lap-border) !important; box-shadow:0 8px 30px rgba(0,0,0,.3) !important; }
+.nav-links { background:#0A1020 !important; }
+.nav-links a { color:#F7F9FC !important; opacity:1 !important; }
+.nav-links a:hover { color:var(--lap-gold-bright) !important; }
+.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band { position:relative; overflow:hidden; isolation:isolate; color:var(--lap-text) !important; }
+.hero,.speaker-section,.video-section,.cta-band,.final-cta,.cohort-cta-section { background:linear-gradient(135deg,#080E1C 0%,#0A1020 42%,#0E1A33 100%) !important; }
+.content-section,.program-section,.value-section { background:linear-gradient(180deg,#0A1020 0%,#0E1A33 100%) !important; }
+.method-section,.info-section,.testimonials-section { background:linear-gradient(180deg,#101A30 0%,#0A1020 100%) !important; border-color:var(--lap-border-soft) !important; }
+.hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before { content:""; position:absolute; width:clamp(230px,28vw,470px); height:clamp(520px,72vw,980px); border-radius:50%; pointer-events:none; z-index:0; opacity:.42; background:linear-gradient(90deg,transparent 0 62%,rgba(0,0,0,.62) 62% 67%,transparent 67%),linear-gradient(90deg,transparent 0 70%,var(--lap-gold) 70% 73%,#F0E4CE 73% 79%,transparent 79%); }
 .hero::before,.method-section::before,.value-section::before,.final-cta::before { right:-17%; top:-28%; transform:rotate(-15deg); }
 .speaker-section::after,.info-section::after { left:-18%; bottom:-42%; transform:rotate(165deg); }
-
-.hero > *, .speaker-section > *, .method-section > *, .program-section > *,
-.info-section > *, .value-section > *, .final-cta > *, .content-section > *,
-.video-section > *, .cta-band > *, .cohort-cta-section > *, .testimonials-section > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* PRIMARY TYPOGRAPHY — strong white. */
-.hero h1,.hero h2,.hero h3,.hero h4,.hero h5,.hero h6,
-.speaker-section h1,.speaker-section h2,.speaker-section h3,.speaker-section h4,.speaker-section h5,.speaker-section h6,
-.method-section h1,.method-section h2,.method-section h3,.method-section h4,.method-section h5,.method-section h6,
-.program-section h1,.program-section h2,.program-section h3,.program-section h4,.program-section h5,.program-section h6,
-.info-section h1,.info-section h2,.info-section h3,.info-section h4,.info-section h5,.info-section h6,
-.value-section h1,.value-section h2,.value-section h3,.value-section h4,.value-section h5,.value-section h6,
-.final-cta h1,.final-cta h2,.final-cta h3,.cohort-cta-section h1,.cohort-cta-section h2,.cohort-cta-section h3,
-.testimonials-section h1,.testimonials-section h2,.testimonials-section h3,
-.content-section h1,.content-section h2,.content-section h3,.content-section h4,
-.video-section h1,.video-section h2,.video-section h3,.cta-band h1,.cta-band h2,.cta-band h3,
-.font-display,.content-title,.section-title,.speaker-title,.program-title,.value-title,.cta-title,
-.day-title,.gauge-title,.method-card-title,.obj-title,.info-value,.inc-title {
-  color: var(--lap-white) !important;
-  opacity: 1 !important;
-  text-shadow: 0 2px 18px rgba(0,0,0,.16) !important;
-}
-
-/* BODY COPY — near white rather than gray-blue. */
-.hero p,.speaker-section p,.method-section p,.program-section p,.info-section p,
-.value-section p,.final-cta p,.cohort-cta-section p,.testimonials-section p,
-.content-section p,.video-section p,.cta-band p,
-.hero li,.speaker-section li,.method-section li,.program-section li,.info-section li,
-.value-section li,.final-cta li,.cohort-cta-section li,.testimonials-section li,
-.content-section li,.video-section li,.cta-band li,
-.content-description,.section-subtitle,.speaker-description,.speaker-role,.speaker-bio,
-.gauge-desc,.method-card-desc,.day-subtitle,.objective-card p,.info-detail,.stat-lbl,
-.inc-desc,.policy-card ul,.examples-card ul,.quote-text,.testimonial-text {
-  color: var(--lap-text-secondary) !important;
-  opacity: 1 !important;
-}
-
-/* Small metadata must remain readable too. */
-.speaker-section small,.method-section small,.program-section small,.info-section small,
-.value-section small,.testimonials-section small,.content-section small,
-.speaker-meta,.speaker-credentials,.credential,.stat-lbl,.hero-meta,.info-label,
-.day-meta,.method-card-label,.timeline-meta {
-  color: var(--lap-text-soft) !important;
-  opacity: 1 !important;
-}
-
-/* Gold hierarchy. */
-.serif-italic,.gold-text,.text-gold,.hero-accent,.section-accent,.content-accent,
-.quote-mark,.eyebrow,.section-tag,.content-tag,.kicker,
-.content-title em,.section-title em,.speaker-title em,.program-title em,.value-title em,.cta-title em {
-  color: var(--lap-gold-bright) !important;
-  opacity: 1 !important;
-}
-
-/* Kill remaining legacy dark colors from the original light theme. */
-.hero [style*="color: var(--navy)"],.hero [style*="color:var(--navy)"],
-.speaker-section [style*="color: var(--navy)"],.speaker-section [style*="color:var(--navy)"],
-.method-section [style*="color: var(--navy)"],.method-section [style*="color:var(--navy)"],
-.program-section [style*="color: var(--navy)"],.program-section [style*="color:var(--navy)"],
-.info-section [style*="color: var(--navy)"],.value-section [style*="color: var(--navy)"],
-.content-section [style*="color: var(--navy)"],.testimonials-section [style*="color: var(--navy)"],
-[style*="color: var(--text-dark)"],[style*="color:var(--text-dark)"],
-[style*="color: var(--text-muted)"],[style*="color:var(--text-muted)"] {
-  color: var(--lap-text) !important;
-  opacity: 1 !important;
-}
-
-/* Cards and reading surfaces: deeper canvas, brighter border, visible depth. */
-.quote-box,.content-card,.speaker-card,.day-card,.objective-card,
-.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,
-.policy-card,.examples-card,.table-container-lp,.pricing-card,.countdown-item {
-  background: linear-gradient(145deg,rgba(8,34,68,.96),rgba(25,70,124,.91)) !important;
-  border-color: var(--lap-border) !important;
-  color: var(--lap-text) !important;
-  box-shadow: var(--lap-shadow), inset 0 1px 0 rgba(255,255,255,.08) !important;
-}
-
-.quote-box p,.content-card p,.speaker-card p,.day-card p,.objective-card p,
-.gauge-card p,.method-card p,.timeline-item p,.info-card p,.stat-box p,
-.included-item p,.policy-card p,.examples-card p,.pricing-card p,
-.quote-box li,.content-card li,.speaker-card li,.day-card li,.objective-card li,
-.gauge-card li,.method-card li,.timeline-item li,.info-card li,.policy-card li,.examples-card li {
-  color: var(--lap-text-secondary) !important;
-  opacity: 1 !important;
-}
-
-.topics-list li { background:rgba(255,255,255,.085) !important; color:#F8FAFD !important; }
-.progress-bar-track { background:rgba(255,255,255,.16) !important; }
-.table-container-lp thead tr { background:#0D315E !important; }
+.hero > *,.speaker-section > *,.method-section > *,.program-section > *,.info-section > *,.value-section > *,.final-cta > *,.content-section > *,.video-section > *,.cta-band > *,.cohort-cta-section > *,.testimonials-section > * { position:relative; z-index:2; }
+.hero h1,.hero h2,.hero h3,.hero h4,.hero h5,.hero h6,.speaker-section h1,.speaker-section h2,.speaker-section h3,.speaker-section h4,.speaker-section h5,.speaker-section h6,.method-section h1,.method-section h2,.method-section h3,.method-section h4,.method-section h5,.method-section h6,.program-section h1,.program-section h2,.program-section h3,.program-section h4,.program-section h5,.program-section h6,.info-section h1,.info-section h2,.info-section h3,.info-section h4,.info-section h5,.info-section h6,.value-section h1,.value-section h2,.value-section h3,.value-section h4,.value-section h5,.value-section h6,.final-cta h1,.final-cta h2,.final-cta h3,.cohort-cta-section h1,.cohort-cta-section h2,.cohort-cta-section h3,.testimonials-section h1,.testimonials-section h2,.testimonials-section h3,.content-section h1,.content-section h2,.content-section h3,.content-section h4,.video-section h1,.video-section h2,.video-section h3,.cta-band h1,.cta-band h2,.cta-band h3,.font-display,.content-title,.section-title,.speaker-title,.program-title,.value-title,.cta-title,.day-title,.gauge-title,.method-card-title,.obj-title,.info-value,.inc-title { color:var(--lap-white) !important; opacity:1 !important; text-shadow:0 2px 18px rgba(0,0,0,.22) !important; }
+.hero p,.speaker-section p,.method-section p,.program-section p,.info-section p,.value-section p,.final-cta p,.cohort-cta-section p,.testimonials-section p,.content-section p,.video-section p,.cta-band p,.hero li,.speaker-section li,.method-section li,.program-section li,.info-section li,.value-section li,.final-cta li,.cohort-cta-section li,.testimonials-section li,.content-section li,.video-section li,.cta-band li,.content-description,.section-subtitle,.speaker-description,.speaker-role,.speaker-bio,.gauge-desc,.method-card-desc,.day-subtitle,.objective-card p,.info-detail,.stat-lbl,.inc-desc,.policy-card ul,.examples-card ul,.quote-text,.testimonial-text { color:var(--lap-text-secondary) !important; opacity:1 !important; }
+.speaker-section small,.method-section small,.program-section small,.info-section small,.value-section small,.testimonials-section small,.content-section small,.speaker-meta,.speaker-credentials,.credential,.stat-lbl,.hero-meta,.info-label,.day-meta,.method-card-label,.timeline-meta { color:var(--lap-text-soft) !important; opacity:1 !important; }
+.serif-italic,.gold-text,.text-gold,.hero-accent,.section-accent,.content-accent,.quote-mark,.eyebrow,.section-tag,.content-tag,.kicker,.content-title em,.section-title em,.speaker-title em,.program-title em,.value-title em,.cta-title em { color:var(--lap-gold-bright) !important; opacity:1 !important; }
+[style*="color: var(--navy)"],[style*="color:var(--navy)"],[style*="color: var(--text-dark)"],[style*="color:var(--text-dark)"],[style*="color: var(--text-muted)"],[style*="color:var(--text-muted)"] { color:var(--lap-text) !important; opacity:1 !important; }
+.quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp,.pricing-card,.countdown-item { background:linear-gradient(145deg,rgba(9,15,30,.97),rgba(16,26,48,.94)) !important; border-color:var(--lap-border) !important; color:var(--lap-text) !important; box-shadow:var(--lap-shadow),inset 0 1px 0 rgba(255,255,255,.055) !important; }
+.quote-box p,.content-card p,.speaker-card p,.day-card p,.objective-card p,.gauge-card p,.method-card p,.timeline-item p,.info-card p,.stat-box p,.included-item p,.policy-card p,.examples-card p,.pricing-card p,.quote-box li,.content-card li,.speaker-card li,.day-card li,.objective-card li,.gauge-card li,.method-card li,.timeline-item li,.info-card li,.policy-card li,.examples-card li { color:var(--lap-text-secondary) !important; opacity:1 !important; }
+.topics-list li { background:rgba(255,255,255,.06) !important; color:#F7F8FB !important; }
+.progress-bar-track { background:rgba(255,255,255,.12) !important; }
+.table-container-lp thead tr { background:#080E1C !important; }
 .table-container-lp td { color:var(--lap-text-secondary) !important; }
-.table-container-lp tbody tr { border-bottom-color:rgba(255,255,255,.12) !important; }
-
-/* Controls. */
-.btn-gold { background:linear-gradient(135deg,#E7CF8C,var(--lap-gold)) !important; color:#102F59 !important; box-shadow:0 8px 24px rgba(214,181,104,.26) !important; }
-.btn-gold * { color:#102F59 !important; }
-.btn-gold:hover { background:#EBD79F !important; color:#102F59 !important; }
-.btn-navy,.btn-outline { color:#FFFFFF !important; border-color:var(--lap-border) !important; }
-.btn-navy { background:rgba(13,49,94,.88) !important; }
-.btn-outline { background:rgba(255,255,255,.035) !important; }
-.btn-navy:hover,.btn-outline:hover { background:var(--lap-gold) !important; color:#102F59 !important; }
-
-footer { background:#0B2A51 !important; border-top-color:var(--lap-border-soft) !important; color:var(--lap-text-soft) !important; }
-
-@media (max-width:768px) {
-  .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before {
-    width:210px; height:560px; opacity:.28;
-  }
-  .hero::before,.method-section::before,.value-section::before,.final-cta::before { right:-150px; top:-105px; }
-  .speaker-section::after,.info-section::after { left:-155px; bottom:-190px; }
-  .content-description,.section-subtitle,.speaker-description,.speaker-role,.day-subtitle,
-  .gauge-desc,.method-card-desc,.info-detail,.inc-desc,.quote-text {
-    color:#EEF3F9 !important;
-  }
-  .quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,
-  .timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp {
-    backdrop-filter:none !important;
-    background:rgba(9,40,78,.96) !important;
-  }
-}
-
-@media (prefers-reduced-motion:reduce) {
-  *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; }
-}
+.table-container-lp tbody tr { border-bottom-color:rgba(255,255,255,.1) !important; }
+.btn-gold { background:linear-gradient(135deg,#D8B762,var(--lap-gold)) !important; color:#0A1020 !important; box-shadow:0 8px 24px rgba(201,162,75,.24) !important; }
+.btn-gold * { color:#0A1020 !important; }
+.btn-gold:hover { background:#DFC274 !important; color:#0A1020 !important; }
+.btn-navy,.btn-outline { color:#FFF !important; border-color:var(--lap-border) !important; }
+.btn-navy { background:rgba(16,26,48,.9) !important; }
+.btn-outline { background:rgba(255,255,255,.025) !important; }
+.btn-navy:hover,.btn-outline:hover { background:var(--lap-gold) !important; color:#0A1020 !important; }
+footer { background:#070C18 !important; border-top-color:var(--lap-border-soft) !important; color:var(--lap-text-soft) !important; }
+@media (max-width:768px) { .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before { width:210px; height:560px; opacity:.24; } .hero::before,.method-section::before,.value-section::before,.final-cta::before { right:-150px; top:-105px; } .speaker-section::after,.info-section::after { left:-155px; bottom:-190px; } .content-description,.section-subtitle,.speaker-description,.speaker-role,.day-subtitle,.gauge-desc,.method-card-desc,.info-detail,.inc-desc,.quote-text { color:#EDF0F5 !important; } .quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp { backdrop-filter:none !important; background:rgba(10,16,32,.97) !important; } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
