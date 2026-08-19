@@ -55,5 +55,21 @@ header { background:rgba(10,16,32,.97) !important; border-bottom-color:var(--lap
 .btn-outline { background:rgba(255,255,255,.025) !important; }
 .btn-navy:hover,.btn-outline:hover { background:var(--lap-gold) !important; color:#0A1020 !important; }
 footer { background:#070C18 !important; border-top-color:var(--lap-border-soft) !important; color:var(--lap-text-soft) !important; }
+
+/* Hero must stay midnight all the way to the next section. The legacy inline
+   stylesheet adds a 150px fade to --offwhite; neutralize it explicitly. */
+.hero::after {
+  content:'' !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  height:72px !important;
+  background:linear-gradient(to bottom,transparent 0%,rgba(8,14,28,.18) 45%,#0A1020 100%) !important;
+  pointer-events:none !important;
+  z-index:1 !important;
+}
+.video-section { border-top:1px solid rgba(201,162,75,.16) !important; }
+
 @media (max-width:768px) { .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before { width:210px; height:560px; opacity:.24; } .hero::before,.method-section::before,.value-section::before,.final-cta::before { right:-150px; top:-105px; } .speaker-section::after,.info-section::after { left:-155px; bottom:-190px; } .content-description,.section-subtitle,.speaker-description,.speaker-role,.day-subtitle,.gauge-desc,.method-card-desc,.info-detail,.inc-desc,.quote-text { color:#EDF0F5 !important; } .quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp { backdrop-filter:none !important; background:rgba(10,16,32,.97) !important; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
