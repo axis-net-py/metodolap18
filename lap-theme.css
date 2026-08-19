@@ -159,16 +159,86 @@ header {
 
 footer { background: #0E2D56; border-top-color: var(--gold-border); }
 
+/* ===== Contrast hardening for the certificate-blue edition =====
+   The original landing was authored for light surfaces and contains
+   component-level navy/text-dark rules. These overrides keep the approved
+   blue background while restoring the intended premium white/gold hierarchy. */
+
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band) {
+  color: var(--text-muted);
+}
+
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+:where(h1,h2,h3,h4,h5,h6,.font-display,.content-title,.section-title,.speaker-title,.program-title,.value-title,.cta-title,.day-title,.gauge-title,.method-card-title,.obj-title,.info-value,.inc-title,.quote-text) {
+  color: var(--white) !important;
+}
+
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+:where(p,.content-description,.section-subtitle,.speaker-description,.day-subtitle,.gauge-desc,.method-card-desc,.objective-card p,.info-detail,.stat-lbl,.inc-desc,li) {
+  color: var(--text-muted) !important;
+}
+
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+:where(.serif-italic,.gold-text,.text-gold,.hero-accent,.section-accent,.content-accent,.quote-mark,.eyebrow,.section-tag,.content-tag,.kicker) {
+  color: var(--gold) !important;
+}
+
+/* Neutralize legacy inline / component colors that were designed for ivory. */
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+[style*="color: var(--navy)"],
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+[style*="color:var(--navy)"],
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+[style*="color: var(--text-dark)"],
+:where(.hero,.speaker-section,.method-section,.program-section,.info-section,.value-section,.final-cta,.cohort-cta-section,.testimonials-section,.content-section,.video-section,.cta-band)
+[style*="color:var(--text-dark)"] {
+  color: var(--white) !important;
+}
+
+/* Reading surfaces and cards: enough separation without returning to a light theme. */
+.quote-box,.content-card,.speaker-card,.day-card,.objective-card,
+.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp {
+  background: linear-gradient(145deg, rgba(9,38,75,.88), rgba(18,53,99,.76)) !important;
+  border-color: var(--gold-border) !important;
+  color: var(--text-muted) !important;
+}
+
+.quote-box strong,.quote-box b,.quote-box .quote-text,
+.content-card strong,.speaker-card strong,.day-card strong,.objective-card strong {
+  color: var(--white) !important;
+}
+
+.quote-box em,.quote-box .serif-italic,
+.content-title em,.section-title em,.speaker-title em,.program-title em,.value-title em,.cta-title em {
+  color: var(--gold) !important;
+}
+
+/* Preserve functional contrast on controls. */
+.btn-gold,.btn-gold * { color: var(--navy-deep) !important; }
+.btn-navy,.btn-outline { color: var(--white) !important; }
+.btn-navy:hover,.btn-outline:hover { color: var(--navy-deep) !important; }
+.nav-links a { color: rgba(255,255,255,.90) !important; }
+.nav-links a:hover { color: var(--gold) !important; }
+
+/* Mobile: prioritize legibility and reduce decorative competition with text. */
 @media (max-width: 768px) {
   .hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before {
     width: 210px;
     height: 560px;
-    opacity: .72;
+    opacity: .42;
   }
-  .hero::before,.method-section::before,.value-section::before,.final-cta::before { right: -135px; top: -95px; }
-  .speaker-section::after,.info-section::after { left: -145px; bottom: -180px; }
+  .hero::before,.method-section::before,.value-section::before,.final-cta::before { right: -150px; top: -105px; }
+  .speaker-section::after,.info-section::after { left: -155px; bottom: -190px; }
   .hero { background: linear-gradient(155deg,var(--navy-deep),var(--navy) 58%,var(--navy-light)); }
   .hero-content { max-width: 620px; }
+  .content-description,.section-subtitle,.speaker-description,.day-subtitle,.gauge-desc,.method-card-desc,.info-detail,.inc-desc {
+    color: #E7EDF5 !important;
+  }
+  .quote-box,.content-card,.speaker-card,.day-card,.objective-card,
+  .gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp {
+    backdrop-filter: none;
+    background: rgba(10,45,86,.92) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
