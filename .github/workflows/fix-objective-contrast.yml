@@ -1,0 +1,89 @@
+name: Fix objective card contrast
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-objective-contrast.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Append objective-card contrast rules
+        shell: bash
+        run: |
+          if grep -q "OBJECTIVE CARD CONTRAST FIX" lap-theme.css; then
+            echo "Contrast fix already present"
+            exit 0
+          fi
+
+          cat >> lap-theme.css <<'CSS'
+
+          /* OBJECTIVE CARD CONTRAST FIX — canonical dark theme */
+          .program-section .objective-card {
+            background: linear-gradient(145deg, rgba(7,12,24,.99), rgba(18,31,57,.98)) !important;
+            border: 1px solid rgba(201,162,75,.58) !important;
+          }
+
+          .program-section .objective-card,
+          .program-section .objective-card p,
+          .program-section .objective-card p *,
+          .program-section .objective-card span,
+          .program-section .objective-card strong,
+          .program-section .objective-card em,
+          .program-section .objective-card b,
+          .program-section .objective-card i:not(.fa):not(.fas):not(.far):not(.fab),
+          .program-section .objective-card li {
+            color: #F7F9FC !important;
+            -webkit-text-fill-color: #F7F9FC !important;
+            opacity: 1 !important;
+            filter: none !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,.32) !important;
+          }
+
+          .program-section .objective-card .obj-title,
+          .program-section .objective-card .obj-title *,
+          .program-section .objective-card [class*="objective-title"],
+          .program-section .objective-card [class*="objective-label"] {
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            opacity: 1 !important;
+          }
+
+          .program-section .objective-card [style*="color"],
+          .program-section .objective-card [style*="opacity"] {
+            color: #F7F9FC !important;
+            -webkit-text-fill-color: #F7F9FC !important;
+            opacity: 1 !important;
+          }
+
+          @media (max-width: 768px) {
+            .program-section .objective-card,
+            .program-section .objective-card p,
+            .program-section .objective-card p *,
+            .program-section .objective-card span,
+            .program-section .objective-card strong,
+            .program-section .objective-card em {
+              color: #FFFFFF !important;
+              -webkit-text-fill-color: #FFFFFF !important;
+              opacity: 1 !important;
+            }
+          }
+          CSS
+
+      - name: Commit CSS fix
+        run: |
+          if git diff --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lap-theme.css
+          git commit -m 'fix: restore contrast in objective cards'
+          git push
