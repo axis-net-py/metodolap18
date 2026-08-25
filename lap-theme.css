@@ -49,3 +49,54 @@ footer{background:#050914!important;border-top-color:var(--lap-border-soft)!impo
 .social-links a:not([aria-label="Instagram"]){display:none!important}
 @media(max-width:768px){.hero::before,.speaker-section::after,.method-section::before,.info-section::after,.value-section::before,.final-cta::before{width:230px;height:600px;opacity:.42}.hero::before,.method-section::before,.value-section::before,.final-cta::before{right:-150px;top:-95px}.speaker-section::after,.info-section::after{left:-155px;bottom:-180px}.content-description,.section-subtitle,.speaker-description,.speaker-role,.day-subtitle,.gauge-desc,.method-card-desc,.info-detail,.inc-desc,.quote-text{color:#F0F3F7!important}.quote-box,.content-card,.speaker-card,.day-card,.objective-card,.gauge-card,.method-card,.timeline-item,.info-card,.stat-box,.included-item,.policy-card,.examples-card,.table-container-lp{backdrop-filter:none!important;background:rgba(8,14,28,.98)!important}.hero::after{height:132px!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* OBJECTIVE CARD CONTRAST FIX — canonical dark theme */
+.program-section .objective-card {
+  background: linear-gradient(145deg, rgba(7,12,24,.99), rgba(18,31,57,.98)) !important;
+  border: 1px solid rgba(201,162,75,.58) !important;
+}
+
+.program-section .objective-card,
+.program-section .objective-card p,
+.program-section .objective-card p *,
+.program-section .objective-card span,
+.program-section .objective-card strong,
+.program-section .objective-card em,
+.program-section .objective-card b,
+.program-section .objective-card i:not(.fa):not(.fas):not(.far):not(.fab),
+.program-section .objective-card li {
+  color: #F7F9FC !important;
+  -webkit-text-fill-color: #F7F9FC !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,.32) !important;
+}
+
+.program-section .objective-card .obj-title,
+.program-section .objective-card .obj-title *,
+.program-section .objective-card [class*="objective-title"],
+.program-section .objective-card [class*="objective-label"] {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+.program-section .objective-card [style*="color"],
+.program-section .objective-card [style*="opacity"] {
+  color: #F7F9FC !important;
+  -webkit-text-fill-color: #F7F9FC !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .program-section .objective-card,
+  .program-section .objective-card p,
+  .program-section .objective-card p *,
+  .program-section .objective-card span,
+  .program-section .objective-card strong,
+  .program-section .objective-card em {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    opacity: 1 !important;
+  }
+}
