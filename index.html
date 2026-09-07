@@ -51,7 +51,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="lap-theme.css" />
-  <link rel="stylesheet" href="instructors.css" />
 
   <style>
     /* ===== DESIGN SYSTEM & TOKENS ===== */
@@ -590,6 +589,14 @@
     .speaker-list i {
       color: var(--gold);
       font-size: 16px;
+    }
+
+    .speaker-section-mirrored .speaker-flex { flex-direction: row-reverse; }
+    .speaker-section-mirrored .speaker-image-container::before { left: auto; right: -15px; }
+    @media (max-width: 767px) {
+      .speaker-section-mirrored .speaker-flex { flex-direction: column; }
+      .speaker-section-mirrored .speaker-image-container,
+      .speaker-section-mirrored .speaker-content { min-width: 0; width: 100%; }
     }
 
     /* ===== CONTENT SECTION (THE CHALLENGE) ===== */
@@ -1594,6 +1601,23 @@
     </div>
   </section>
 
+  <!-- ===== ALCEDIR RUFATTO ===== -->
+  <section class="speaker-section speaker-section-mirrored" id="alcedir">
+    <div class="container">
+      <div class="speaker-flex">
+        <div class="speaker-image-container reveal-right">
+          <img src="alcedir-instrutor.jpeg" alt="Alcedir Rufatto" width="1024" height="1536" loading="lazy" decoding="async" />
+        </div>
+        <div class="speaker-content reveal-left">
+          <span class="speaker-tag">El Hipnoterapeuta</span>
+          <h2 class="speaker-name">Alcedir <br /><span>Rufatto</span></h2>
+          <p class="speaker-role">Hipnoterapeuta</p>
+          <p class="speaker-quote">Hipnoterapeuta dedicado al desarrollo humano, la transformación de patrones de comportamiento y el fortalecimiento de la conciencia emocional, aporta al LAP un enfoque práctico de autoconocimiento aplicado al liderazgo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== LA PROPUESTA (THE CHALLENGE) ===== -->
   <section class="content-section" id="propuesta">
     <div class="container">
@@ -1662,31 +1686,6 @@
           <div class="method-card-title">Autoconocimiento</div>
           <p class="method-card-desc">Evaluación del perfil de comportamiento DISC propio y diagnóstico empresarial.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== INSTRUTORES ===== -->
-  <section class="instructors-section" id="instrutores" aria-labelledby="instructors-title">
-    <div class="container">
-      <h2 id="instructors-title">INSTRUCTORES</h2>
-      <div class="instructors-grid">
-        <article class="instructor-card">
-          <img class="instructor-photo" src="jocelaine-rufatto-instrutora.jpeg" alt="Jocelaine Rufatto" width="1024" height="1536" loading="lazy" decoding="async" />
-          <div class="instructor-content">
-            <h3>Jocelaine Rufatto</h3>
-            <p class="instructor-role">Mentora</p>
-            <p class="instructor-bio">Especialista en el desarrollo de líderes y alto rendimiento, dirige el Método LAP con un enfoque en el comportamiento, la comunicación, la inteligencia emocional y la aplicación práctica en el entorno profesional.</p>
-          </div>
-        </article>
-        <article class="instructor-card">
-          <img class="instructor-photo" src="alcedir-instrutor.jpeg" alt="Alcedir" width="1024" height="1536" loading="lazy" decoding="async" />
-          <div class="instructor-content">
-            <h3>Alcedir</h3>
-            <p class="instructor-role">Hipnoterapeuta</p>
-            <p class="instructor-bio">Hipnoterapeuta dedicado al desarrollo humano, la transformación de patrones de comportamiento y el fortalecimiento de la conciencia emocional, aporta al LAP un enfoque práctico de autoconocimiento aplicado al liderazgo.</p>
-          </div>
-        </article>
       </div>
     </div>
   </section>
