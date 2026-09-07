@@ -1,0 +1,61 @@
+.instructors-section {
+  padding: 96px 0;
+  background: linear-gradient(135deg, #0a1020, #0e1a33);
+  border-top: 1px solid rgba(201, 162, 75, .3);
+  border-bottom: 1px solid rgba(201, 162, 75, .3);
+  font-family: 'DM Sans', sans-serif;
+}
+.instructors-section h2 {
+  margin-bottom: 48px;
+  color: #e0be68;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: .18em;
+  line-height: 1.4;
+}
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.instructor-card {
+  overflow: hidden;
+  border: 1px solid rgba(201, 162, 75, .4);
+  border-radius: 12px;
+  background: #101a30;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .24);
+}
+.instructor-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+  border-bottom: 2px solid #c9a24b;
+}
+.instructor-content { padding: 32px; }
+.instructors-section .instructor-content h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.instructor-role {
+  margin-bottom: 20px;
+  color: #e0be68;
+  font-weight: 500;
+}
+.instructor-bio { color: #e4e8ef; font-size: 1rem; line-height: 1.8; }
+@media (max-width: 767px) {
+  .instructors-section { padding: 64px 0; }
+  .instructors-grid { grid-template-columns: minmax(0, 1fr); max-width: 480px; gap: 28px; }
+  .instructor-content { padding: 24px; }
+}
