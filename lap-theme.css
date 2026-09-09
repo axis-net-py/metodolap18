@@ -100,3 +100,6 @@ footer{background:#050914!important;border-top-color:var(--lap-border-soft)!impo
     opacity: 1 !important;
   }
 }
+
+/* Keep the investment section free of decorative ribbons. */
+.value-section::before { content: none; display: none; }
